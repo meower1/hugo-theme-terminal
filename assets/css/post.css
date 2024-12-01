@@ -23,6 +23,7 @@
   width: 100%;
   text-align: left;
   padding: 40px 0;
+  direction: rtl;
 }
 
 .post:not(:last-of-type) {
