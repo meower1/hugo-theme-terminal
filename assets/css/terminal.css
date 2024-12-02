@@ -1,12 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code&family=Fira+Code:wght@400;700&display=swap");
 
 :root {
+  /* Dark theme (default) */
   --background: #10041b;
   --foreground: #ffffff;
   --accent: #78e2a0;
   --font-size: 1rem;
   --line-height: 1.54rem;
   --radius: 0px;
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --background: #f5f5f0;
+  --foreground: #1a1a1a;
+  --accent: #2a6f3f;
 }
 
 html {

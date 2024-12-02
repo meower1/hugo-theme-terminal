@@ -113,6 +113,30 @@
   right: 0;
 }
 
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.theme-toggle button {
+  color: var(--accent);
+  border: 2px solid;
+  padding: 3px 8px;
+  height: 100%;
+  cursor: pointer;
+  background: none;
+}
+
+.theme-toggle button:hover {
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+}
+
+.lamp-dark, .lamp-light {
+  width: 24px;
+  height: 24px;
+}
+
 @media (max-width: 684px) {
   .navigation-menu {
     margin: 0;

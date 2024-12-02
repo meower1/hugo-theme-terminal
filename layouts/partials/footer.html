@@ -19,5 +19,35 @@
 
 <script type="text/javascript" src="{{ $bundle.RelPermalink }}"></script>
 
+<script>
+const themeToggle = document.getElementById('theme-toggle');
+const lampDark = document.querySelector('.lamp-dark');
+const lampLight = document.querySelector('.lamp-light');
+
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.documentElement.setAttribute('data-theme', savedTheme);
+updateLampIcon(savedTheme);
+
+themeToggle.addEventListener('click', () => {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  
+  document.documentElement.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+  updateLampIcon(newTheme);
+});
+
+function updateLampIcon(theme) {
+  if (theme === 'light') {
+    lampDark.style.display = 'none';
+    lampLight.style.display = 'block';
+  } else {
+    lampDark.style.display = 'block';
+    lampLight.style.display = 'none';
+  }
+}
+</script>
+
 <!-- Extended footer section-->
 {{ partial "extended_footer.html" . }}

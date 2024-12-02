@@ -113,3 +113,138 @@ pre[class*=language-] {
 .line-numbers .line-highlight::after {
   content: none;
 }
+
+/* Base token colors for both modes */
+:root {
+  /* Dark mode defaults */
+  --code-bg: #2d2d2d;
+  --code-fg: #f8f8f2;
+  --code-comment: #888888;
+  --code-keyword: #ff79c6;
+  --code-string: #f1fa8c;
+  --code-number: #bd93f9;
+  --code-variable: #50fa7b;
+  --code-operator: #ff79c6;
+  --code-function: #50fa7b;
+  --code-table: #f8f8f2;
+  --code-property: #66d9ef;
+}
+
+/* Dark mode colors (default) */
+:root {
+  --code-keyword: var(--accent);
+  --code-function: var(--accent);
+  --code-string: color-mix(in srgb, var(--accent) 70%, transparent);
+  --code-table: var(--foreground);
+  --code-identifier: var(--foreground);
+  --code-alias: var(--foreground);
+}
+
+/* Light mode colors */
+[data-theme="light"] {
+  --code-bg: #f5f5f5;
+  --code-fg: #24292e;
+  --code-comment: #6a737d;
+  --code-keyword: #d73a49;
+  --code-string: #032f62;
+  --code-number: #005cc5;
+  --code-variable: #22863a;
+  --code-operator: #d73a49;
+  --code-function: #6f42c1;
+  --code-table: #24292e;
+  --code-property: #005cc5;
+}
+
+/* Light mode colors */
+[data-theme="light"] {
+  --code-keyword: #0033b3;
+  --code-function: #3777b3;
+  --code-string: #067d17;
+  --code-table: #1a1a1a;
+  --code-identifier: #1a1a1a;
+  --code-alias: #1a1a1a;
+}
+
+/* Shell highlighting */
+.language-shell .token.function,
+.language-bash .token.function {
+  color: var(--code-function) !important;
+}
+
+.language-shell .token.command,
+.language-bash .token.command {
+  color: var(--code-keyword) !important;
+}
+
+.language-shell .token.string,
+.language-bash .token.string {
+  color: var(--code-string) !important;
+}
+
+.language-shell .token.operator,
+.language-bash .token.operator {
+  color: var(--code-operator) !important;
+}
+
+/* SQL specific syntax */
+.language-sql .token.keyword {
+  color: var(--code-keyword) !important;
+}
+
+.language-sql .token.function {
+  color: var(--code-function) !important;
+}
+
+.language-sql .token.string {
+  color: var(--code-string) !important;
+}
+
+/* Fix for table names */
+.language-sql .token.table,
+.language-sql .token.constant {
+  color: var(--code-table) !important;
+}
+
+/* Fix for column names and identifiers */
+.language-sql .token.column,
+.language-sql .token.identifier {
+  color: var(--code-identifier) !important;
+}
+
+/* Fix for table aliases */
+.language-sql .token.alias {
+  color: var(--code-alias) !important;
+}
+
+/* Fix for property access (e.g., r.name, m.item) */
+.language-sql .token.property {
+  color: var(--code-identifier) !important;
+}
+
+/* YAML highlighting */
+.language-yaml .token.key {
+  color: var(--code-property) !important;
+}
+
+.language-yaml .token.string {
+  color: var(--code-string) !important;
+}
+
+.language-yaml .token.number {
+  color: var(--code-number) !important;
+}
+
+.language-yaml .token.boolean {
+  color: var(--code-keyword) !important;
+}
+
+/* Common code block styling */
+pre[class*="language-"] {
+  background: var(--code-bg) !important;
+  color: var(--code-fg) !important;
+}
+
+.token.comment {
+  color: var(--code-comment) !important;
+  font-style: italic;
+}

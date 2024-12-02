@@ -27,6 +27,12 @@
   <link rel="stylesheet" href="{{ "style.css" | absURL }}">
 {{- end }}
 
+<!-- Custom CSS from site params -->
+{{ range .Site.Params.custom_css -}}
+    {{ $style := resources.Get . | minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+{{- end }}
+
 <!-- Icons -->
 <link rel="shortcut icon" href="{{ "favicon.png" | absURL }}">
 <link rel="apple-touch-icon" href="{{ "apple-touch-icon.png" | absURL }}">
